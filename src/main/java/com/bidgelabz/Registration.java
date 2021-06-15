@@ -43,6 +43,17 @@ public class Registration {
         else {
             System.out.println(" Email-Id is valid ");
         }
+    }public void checkPhoneNumber()
+    {System.out.println("Enter Your Mobile Number");
+        phoneNumber = scan.nextLine();
+        check=Pattern.compile("^[0-9]{1,3} [0-9]{10}$").matcher(phoneNumber).matches();
+        if (!check) {
+            System.out.println(" Number is invalid!!Please Enter a Valid one. ");
+            checkPhoneNumber();
+        }
+        else {
+            System.out.println("Valid Number ");
+        }
     }
 
     public static void main (String[] args)
@@ -51,5 +62,5 @@ public class Registration {
         reg.checkFirstName();
         reg.checkLastName();
         reg.checkEmail();
-}
+        reg.checkPhoneNumber();}
 }
