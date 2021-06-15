@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Registration {
-        String firstName;
+        String firstName,lastName;
         boolean check;
         Scanner scan=new Scanner(System.in);
         public void checkFirstName() {
@@ -17,10 +17,24 @@ public class Registration {
                 System.out.println("It's a Valid Firstname");
             }
         }
+        //checko lastname method will check the user input according to the given pattern
+    public void checkLastName()
+    {
+        System.out.println("Enter LastName starts with capital letter and has minimum 3 character");
+        lastName=scan.nextLine();
+        check=Pattern.compile("[A-Z]{1}[a-z]{2,}").matcher(lastName).matches();
+        if(!check)
+        {
+            System.out.println("Invalid!!!");
+            checkLastName();
+        }else
+            System.out.println("It is a valid lastname");
+    }
         public static void main (String[] args)
         {
             Registration reg=new Registration();
             reg.checkFirstName();
+            reg.checkLastName();
         }
 
     }
