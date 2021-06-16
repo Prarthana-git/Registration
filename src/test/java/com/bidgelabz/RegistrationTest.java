@@ -40,7 +40,7 @@ public class RegistrationTest {
     public void passwordShouldBespecify()
     {
         Registration reg=new Registration();
-        String pass="prarthana";
+        String pass="praRthana";
         Assert.assertEquals(true,reg.checkPassword(pass));
     }
 }

@@ -63,9 +63,9 @@ public class Registration {
      * Password must be of 8 characters.
      */
     public boolean checkPassword(String pass) {
-        System.out.println("Enter Password(8 to 10 character): ");
+        System.out.println("Enter Password(Atleast one capital character and length should be 8): ");
         password = pass;
-        check = Pattern.compile("^[a-z]{8,}$").matcher(password).matches();
+        check = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z]){8,}.*$").matcher(password).matches();
         if (!check) {
             System.out.println(" Invalid Password!! Enter a valid one. ");
             checkPassword(pass);
@@ -75,5 +75,6 @@ public class Registration {
         }
         return check;
     }
+
 
 }
