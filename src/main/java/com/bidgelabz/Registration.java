@@ -2,7 +2,7 @@ package com.bidgelabz;
 import java.util.regex.Pattern;
 
 public class Registration {
-    String firstName, lastName, email, phoneNumber;
+    String firstName, lastName, email, phoneNumber,password;
     boolean check;
 
     public boolean checkFirstName(String name) {
@@ -59,4 +59,21 @@ public class Registration {
         }
         return check;
     }
+    /**
+     * Password must be of 8 characters.
+     */
+    public boolean checkPassword(String pass) {
+        System.out.println("Enter Password(8 to 10 character): ");
+        password = pass;
+        check = Pattern.compile("^[a-z]{8,}$").matcher(password).matches();
+        if (!check) {
+            System.out.println(" Invalid Password!! Enter a valid one. ");
+            checkPassword(pass);
+        }
+        else {
+            System.out.println(" Password is valid ");
+        }
+        return check;
+    }
+
 }

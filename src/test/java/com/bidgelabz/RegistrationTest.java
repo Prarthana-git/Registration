@@ -36,5 +36,12 @@ public class RegistrationTest {
         String no="91 9754856458";
         Assert.assertEquals(true,reg.checkPhoneNumber(no));
     }
+    @Test
+    public void passwordShouldBespecify()
+    {
+        Registration reg=new Registration();
+        String pass="prarthana";
+        Assert.assertEquals(true,reg.checkPassword(pass));
+    }
 }
 
