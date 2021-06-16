@@ -2,7 +2,7 @@ package com.bidgelabz;
 import java.util.regex.Pattern;
 
 public class Registration {
-    String firstName, lastName, email, phoneNumber,password;
+    String firstName, lastName, email, phoneNumber, password;
     boolean check;
 
     public boolean checkFirstName(String name) {
@@ -18,6 +18,7 @@ public class Registration {
         return check;
 
     }
+
     //checko lastname method will check the user input according to the given pattern
     public boolean checkLastName(String name) {
         System.out.println("Enter LastName starts with capital letter and has minimum 3 character");
@@ -26,39 +27,39 @@ public class Registration {
         if (!check) {
             System.out.println("Invalid!!!");
             checkLastName(name);
-        } else{
+        } else {
             System.out.println("It is a valid lastname");
-             }
-           return check;
-}
+        }
+        return check;
+    }
+
     //added email method to match the email ids according to given pattern
-    public boolean checkEmail(String mail)
-    {
+    public boolean checkEmail(String mail) {
         System.out.println("Enter a valid email");
-        email=mail;
-        check=Pattern.compile("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$").matcher(email).matches();
+        email = mail;
+        check = Pattern.compile("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$").matcher(email).matches();
         if (!check) {
             System.out.println(" Invalid!!Email-id...Please Enter a Valid one. ");
             checkEmail(mail);
-        }
-        else {
+        } else {
             System.out.println(" Email-Id is valid ");
         }
         return check;
     }
-    public boolean checkPhoneNumber(String no)
-    {System.out.println("Enter Your Mobile Number");
+
+    public boolean checkPhoneNumber(String no) {
+        System.out.println("Enter Your Mobile Number");
         phoneNumber = no;
-        check=Pattern.compile("^[0-9]{1,3} [0-9]{10}$").matcher(phoneNumber).matches();
+        check = Pattern.compile("^[0-9]{1,3} [0-9]{10}$").matcher(phoneNumber).matches();
         if (!check) {
             System.out.println(" Number is invalid!!Please Enter a Valid one. ");
             checkPhoneNumber(no);
-        }
-        else {
+        } else {
             System.out.println("Valid Number ");
         }
         return check;
     }
+
     /**
      * Password must be of 8 characters.
      */
@@ -69,12 +70,27 @@ public class Registration {
         if (!check) {
             System.out.println(" Invalid Password!! Enter a valid one. ");
             checkPassword(pass);
-        }
-        else {
+        } else {
             System.out.println(" Password is valid ");
         }
         return check;
     }
 
-
+    public void givenEmailsCheck() {
+        System.out.println("Now Checking the given Emails............");
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc@yahoo.com"));
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\-.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc-100@yahoo.com"));
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc.100@yahoo.com"));
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc111@abc.com"));
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\-.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc-100@abc.net"));
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc.100@abc.com.au"));
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc@1.com"));
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc@gmail.com.com"));
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\+.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc+100@gmail.com"));
+    }
+ public static void main(String args[])
+ {
+     Registration reg=new Registration();
+     reg.givenEmailsCheck();
+ }
 }
