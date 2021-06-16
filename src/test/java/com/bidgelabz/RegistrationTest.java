@@ -13,7 +13,6 @@ public class RegistrationTest
     /**
      * Rigorous Test :-)
      */
-    @Test
     public void firstnameshouldstartwithCapitalLetter()
 
     {   Registration reg=new Registration();
@@ -21,5 +20,11 @@ public class RegistrationTest
         reg.checkFirstName(name);
         Assert.assertEquals(true,reg.checkFirstName(name));
     }
-   
+    @Test
+    public void LastnameshouldstartwithCapitalLetter(){
+    Registration reg=new Registration();
+    String name ="Chaudhari";
+        reg.checkLastName(name);
+        Assert.assertEquals(true,reg.checkLastName(name));
+}
 }
