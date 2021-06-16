@@ -59,13 +59,17 @@ public class Registration {
         }
         return check;
     }
+
     /**
      * Password must be of 8 characters.
+     * Have one Uppercase Letter.
+     * Have a Special Character(Eg-@$^)"
+     * Must Have a Number.
      */
     public boolean checkPassword(String pass) {
         System.out.println("Enter Password(Atleast one capital character and length should be 8): ");
         password = pass;
-        check = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]){8,}.*$").matcher(password).matches();
+        check = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]?){8,}.*$").matcher(password).matches();
         if (!check) {
             System.out.println(" Invalid Password!! Enter a valid one. ");
             checkPassword(pass);
