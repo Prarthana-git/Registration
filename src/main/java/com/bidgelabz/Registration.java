@@ -31,4 +31,17 @@ public class Registration {
              }
            return check;
 }
+    //added email method to match the email ids according to given pattern
+    public boolean checkEmail(String mail) {
+        System.out.println("Enter a valid email");
+        email = mail;
+        check = Pattern.compile("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$").matcher(email).matches();
+        if (!check) {
+            System.out.println(" Invalid!!Email-id...Please Enter a Valid one. ");
+            checkEmail(mail);
+        } else {
+            System.out.println(" Email-Id is valid ");
+        }
+        return check;
+    }
 }

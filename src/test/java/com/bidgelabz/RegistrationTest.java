@@ -8,23 +8,28 @@ import org.junit.Test;
 /**
  *
  */
-public class RegistrationTest
-{
+public class RegistrationTest {
     /**
      * Rigorous Test :-)
      */
-    public void firstnameshouldstartwithCapitalLetter()
-
-    {   Registration reg=new Registration();
-        String name ="Prarthana";
+    public void firstnameshouldstartwithCapitalLetter() {
+        Registration reg = new Registration();
+        String name = "Prarthana";
         reg.checkFirstName(name);
-        Assert.assertEquals(true,reg.checkFirstName(name));
+        Assert.assertEquals(true, reg.checkFirstName(name));
     }
-    @Test
-    public void LastnameshouldstartwithCapitalLetter(){
-    Registration reg=new Registration();
-    String name ="Chaudhari";
+    public void LastnameshouldstartwithCapitalLetter() {
+        Registration reg = new Registration();
+        String name = "Chaudhari";
         reg.checkLastName(name);
-        Assert.assertEquals(true,reg.checkLastName(name));
-}
+        Assert.assertEquals(true, reg.checkLastName(name));
+    }
+
+    @Test
+    public void emailShouldbespecifictype() {
+        Registration reg = new Registration();
+        String mail = "abc.xyz@bl.co.in";
+        reg.checkEmail(mail);
+        Assert.assertEquals(true, reg.checkEmail(mail));
+    }
 }
