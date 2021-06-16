@@ -1,5 +1,4 @@
 package com.bidgelabz;
-import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Registration {
@@ -41,6 +40,19 @@ public class Registration {
             checkEmail(mail);
         } else {
             System.out.println(" Email-Id is valid ");
+        }
+        return check;
+    }
+    public boolean checkPhoneNumber(String no)
+    {System.out.println("Enter Your Mobile Number");
+        phoneNumber = no;
+        check=Pattern.compile("^[0-9]{1,3} [0-9]{10}$").matcher(phoneNumber).matches();
+        if (!check) {
+            System.out.println(" Number is invalid!!Please Enter a Valid one. ");
+            checkPhoneNumber(no);
+        }
+        else {
+            System.out.println("Valid Number ");
         }
         return check;
     }
