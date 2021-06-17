@@ -43,5 +43,11 @@ public class RegistrationTest {
         String pass="praRthana@95";
         Assert.assertEquals(true,reg.checkPassword(pass));
     }
+    @Test
+    public void givenMessage_whenSad_ShouldReturnSad() {
+        Registration moodAnalyser = new Registration();
+        String mood = moodAnalyser.analyseMood("this is a sad Message");
+        Assert.assertEquals("SAD", mood);
+    }
 }
 

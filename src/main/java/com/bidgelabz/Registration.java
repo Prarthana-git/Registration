@@ -75,22 +75,10 @@ public class Registration {
         }
         return check;
     }
-
-    public void givenEmailsCheck() {
-        System.out.println("Now Checking the given Emails............");
-        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc@yahoo.com"));
-        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\-.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc-100@yahoo.com"));
-        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc.100@yahoo.com"));
-        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc111@abc.com"));
-        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\-.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc-100@abc.net"));
-        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc.100@abc.com.au"));
-        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc@1.com"));
-        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc@gmail.com.com"));
-        System.out.println(Pattern.matches("^[a-zA-Z0-9]+(?:\\+.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$", "abc+100@gmail.com"));
+    public String analyseMood(String message) {
+        if (message.contains("SAd"))
+            return "SAD";
+        else
+            return "HAPPY";
     }
- public static void main(String args[])
- {
-     Registration reg=new Registration();
-     reg.givenEmailsCheck();
- }
 }
