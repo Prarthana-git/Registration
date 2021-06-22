@@ -1,8 +1,14 @@
-package com.bidgelabz;
+package UserRegistration;
 
+
+import com.bidgelabz.UserRegistrationException;
 import org.junit.Test;
 
-public class UserRegitrationTestt {
+/**
+ * here i have tested possible test cases with custom exception.
+ * printStackTrace method prints a stack trace for this Throwable object on the error output stream that is the value of the field System.err.
+ */
+public class UserRegistrationTest {
     @Test
     public void givenFirstName_WhenProper_ShouldReturnTrue() {
         try {

@@ -3,16 +3,18 @@ package com.bidgelabz;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import java.util.Arrays;
 import java.util.Collection;
+
     /**
      * added an annotation @Runwith which takes class as argument.
      * added variables email and expectedResult.
      */
     @RunWith(Parameterized.class)
-    class UserRegistrationPrameterizedTest {
+    public class UserRegistrationPrameterizedTest {
         public String email;
         public  boolean expectedResult;
         public UserRegistration userRegistration;
@@ -48,8 +50,9 @@ import java.util.Collection;
                     {"abc+100@gmail.com",true}});
         }
         @Test
-        public void givenEmail_WhenProper_ShouldReturnTrueParameterisedTest() throws IllegalArgumentException{
+        public void givenEmail_WhenProper_ShouldReturnTrueParameterisedTest() throws IllegalArgumentException {
             System.out.println("This is Expected Result "+ this.expectedResult);
             Assert.assertEquals(this.expectedResult,userRegistration.checkEmail(this.email));
         }
+    }
 }
